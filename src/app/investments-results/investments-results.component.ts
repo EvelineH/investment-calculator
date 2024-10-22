@@ -12,8 +12,5 @@ import { InvestmentService } from '../investment.service';
 export class InvestmentsResultsComponent {
   private investmentService = inject(InvestmentService)
 
-  get results() {
-    console.log(this.investmentService.resultsData);
-    return this.investmentService.resultsData;
-  } 
+  results = this.investmentService.resultsData.asReadonly()
 }
